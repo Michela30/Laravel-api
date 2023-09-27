@@ -26,6 +26,7 @@ class ProjectSeeder extends Seeder
             
             $project = new Project();
             $project->title = fake()->word();
+            $project->slug = str()->slug($project->title);
             $project->creation_date = fake()->date();
             $project->url = fake()->url();
             $project->thumb = fake()->imageUrl(360, 360, 'animals', true, 'dogs', true, 'jpg');
