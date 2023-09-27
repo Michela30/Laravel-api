@@ -22,7 +22,7 @@ class ProjectSeeder extends Seeder
             Project::truncate();
         });
 
-        for ($i=0; $i < 8; $i++) { 
+        for ($i=0; $i < 20; $i++) { 
             
             $project = new Project();
             $project->title = fake()->word();
