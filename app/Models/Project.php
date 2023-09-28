@@ -31,10 +31,10 @@ class Project extends Model
 
     public function getFullThumbPathAttribute() {
 
-        if($this->thumb){
+        if($this->thumb && !str_starts_with($this->thumb, 'https://via.placeholder.com')){
             return asset('storage/' . $this->thumb);
         }
-        return null;
+        return $this->thumb;
     }
 
 
