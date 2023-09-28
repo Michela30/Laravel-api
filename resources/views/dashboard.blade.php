@@ -6,7 +6,7 @@
 
     <div class="text-center mb-5">
         <h2 class="text-success">
-            Benvenuto!
+            Welcome {{ auth()->user()->name }}!
         </h2>
     </div>
     <div class="row">

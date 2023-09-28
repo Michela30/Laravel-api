@@ -23,6 +23,21 @@ class Project extends Model
         'is_online'
     ];
 
+    //costum attributes
+
+    protected $appends = [
+        'full_thumb_path'
+    ];
+
+    public function getFullThumbPathAttribute() {
+
+        if($this->thumb){
+            return asset('storage/' . $this->thumb);
+        }
+        return null;
+    }
+
+
     //project(many) appartiene a type
     public function type() {
 

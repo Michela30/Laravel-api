@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Storage;
 
 
 //Model
@@ -21,6 +22,10 @@ class ProjectSeeder extends Seeder
         Schema::withoutForeignKeyConstraints(function () {
             Project::truncate();
         });
+
+        Storage::deleteDirectory('uploads');
+        Storage::makeDirectory('uploads');
+
 
         for ($i=0; $i < 20; $i++) { 
             

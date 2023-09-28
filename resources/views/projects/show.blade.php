@@ -34,7 +34,7 @@
                 @if(str_starts_with($project->thumb, 'https://via.placeholder.com/'))
                     <img src="{{ $project->thumb }}" alt="">
                 @else
-                    <img src="{{ asset('storage/' . $project->thumb) }}" alt="">
+                    <img src="{{ $project->full_thumb_path }}" alt="">
                 @endif
             </div>
             <div>
