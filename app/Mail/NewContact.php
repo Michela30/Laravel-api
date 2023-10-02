@@ -14,13 +14,14 @@ class NewContact extends Mailable
     use Queueable, SerializesModels;
 
     //inserire la variabile da trovare pubblica
+    public $contact;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($contact)
     {
-        //
+        $this->contact = $contact;
     }
 
     /**
@@ -29,7 +30,7 @@ class NewContact extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Message from a New Contact',
+            subject: 'New Message from' . '-' . $this->contact->name,
         );
     }
 

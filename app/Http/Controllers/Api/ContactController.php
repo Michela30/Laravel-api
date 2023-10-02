@@ -47,9 +47,9 @@ class ContactController extends Controller
 
         $newContact = Contact::create($data);
 
-        Mail::to('michela@boolean.it')->send(new NewContact());
+        Mail::to('michela@boolean.it')->send(new NewContact($newContact));
 
-        return response()->json($newContact);
+        return response()->json($data);
 
     }
 
