@@ -66,7 +66,7 @@
                 <div class="alert alert-danger">
                     {{ $message }}
                 </div>
-            @enderror
+            @enderror 
 
             <label for="type_id" class="form-label">Type</label>
             <select class="form-select" name="type_id">

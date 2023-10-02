@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\ContactController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +24,6 @@ use Illuminate\Support\Facades\Route;
 Route::name('api.')->group(function (){
 
     Route::resource('projects', ProjectController::class)->only(['index', 'show']);
+    Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
     
 });
